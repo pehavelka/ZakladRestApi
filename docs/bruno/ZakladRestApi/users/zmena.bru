@@ -1,0 +1,26 @@
+meta {
+  name: zmena
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://localhost:8005/users
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{jwt}}
+}
+
+body:json {
+  {
+    "id": 4,
+    "email": "user4@example.com",
+    "fullName": "Uživatel 1opr",
+    "zmenaCas": "2025-04-18T14:35:58.993941",
+    "zmenaUzivatel": "postgres",
+    "platnost": true
+  }
+}

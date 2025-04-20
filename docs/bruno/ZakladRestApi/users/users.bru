@@ -1,0 +1,23 @@
+meta {
+  name: users
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:8005/users
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{jwt}}
+}
+
+body:json {
+  {
+    "id": null,
+    "email": "user",
+    "fullName": null
+  }
+}
