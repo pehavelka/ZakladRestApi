@@ -13,6 +13,7 @@ Projekt **ZakladRestApi** slouží k demonstraci znalostí technologie Spring Bo
 - Liquibase  
 - Docker  
 - PostgreSQL  
+- Open API, Swagger
 
 ## Popis aplikace
 
@@ -131,3 +132,19 @@ Pokud některý z povinných údajů chybí, vrací se odpověď:
 
 V opačném případě je daná akce provedena a vrací se odpověď HTTP 200.  
 Pokud to dává smysl, je v těle odpovědi obsažen JSON s relevantními daty pro danou akci.
+
+# Ověření REST API přes Swagger  
+Na níže uvedené URL adrese je možné ověřit volání služeb přes 
+[Swagger rozhraní](http://localhost:8005/swagger-ui/index.html).  
+  
+Postup ověření:  
+1.  
+V sekci AuthenticationController zavolat metodu [/auth/login](http://localhost:8005/swagger-ui/index.html#/AuthenticationController/authenticate).  
+Metoda obsahuje uživatele a heslo uživatele vytvořeného při automatické inicializaci databáze.  
+Metoda vrátí JWT token.  
+2.  
+Přes tlačítko *Authorize* zadat JWT token z bodu 1.  
+3.  
+Nyní je možné volat všechny zabezpečené metody sekce *UserController*.  
+
+

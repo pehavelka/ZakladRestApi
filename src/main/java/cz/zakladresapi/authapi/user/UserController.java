@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -17,11 +18,13 @@ import org.springframework.web.bind.annotation.RestController;
 import cz.zakladresapi.authapi.user.domain.UserDto;
 import cz.zakladresapi.authapi.user.domain.UserSearchDto;
 import cz.zakladresapi.core.ErrorCollector;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 /**
  * Správa uživatelů
  * 
  */
+@Tag(name = "UserController", description = "Správa uživatelů")
 @RequestMapping("/users")
 @RestController
 public class UserController {
@@ -31,7 +34,7 @@ public class UserController {
 
   @GetMapping
   @PreAuthorize("hasAnyRole('USER', 'ADMIN', 'SUPER_ADMIN')")
-  public ResponseEntity<List<UserDto>> getSeznam(@RequestBody UserSearchDto dto) {
+  public ResponseEntity<List<UserDto>> getSeznam(@ModelAttribute UserSearchDto dto) {
     return ResponseEntity.ok(userService.seznam(dto));
   }
 

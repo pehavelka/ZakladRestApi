@@ -31,7 +31,7 @@ public class SecurityConfiguration {
   SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     http.securityMatcher("/**") // určuje, na jaké requesty se konfigurace vztahuje
         .csrf(csrf -> csrf.disable()) // nový způsob zakázání CSRF
-        .authorizeHttpRequests(auth -> auth.requestMatchers("/auth/**").permitAll().anyRequest().authenticated())
+        .authorizeHttpRequests(auth -> auth.requestMatchers("/auth/**", "/swagger-ui/**", "/v3/api-docs/**").permitAll().anyRequest().authenticated())
         .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .authenticationProvider(authenticationProvider)
         .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);

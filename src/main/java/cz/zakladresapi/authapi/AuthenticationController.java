@@ -13,7 +13,9 @@ import cz.zakladresapi.authapi.domain.UserLoginDto;
 import cz.zakladresapi.authapi.domain.UserSignUpDto;
 import cz.zakladresapi.authapi.role.domain.RoleEnum;
 import cz.zakladresapi.core.ErrorCollector;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
+@Tag(name = "AuthenticationController", description = "Přihlášení do systému, registrace, info o přihlášeném uživateli")
 @RequestMapping("/auth")
 @RestController
 public class AuthenticationController {
