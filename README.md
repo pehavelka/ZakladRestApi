@@ -151,3 +151,7 @@ Nyní je možné volat všechny zabezpečené metody sekce *UserController*.
 
 ------------------------------
 
+aaaaaa
+
+
+aaa
