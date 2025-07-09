@@ -146,12 +146,3 @@ Metoda vrátí JWT token.
 Přes tlačítko *Authorize* zadat JWT token z bodu 1.  
 3.  
 Nyní je možné volat všechny zabezpečené metody sekce *UserController*.  
-
-
-
-------------------------------
-
-aaaaaa
-
-
-aaa
