@@ -148,3 +148,6 @@ Přes tlačítko *Authorize* zadat JWT token z bodu 1.
 Nyní je možné volat všechny zabezpečené metody sekce *UserController*.  
 
 
+
+------------------------------
+
