@@ -10,4 +10,6 @@ public class Trida4 {
   //opr6
   //opr7
   //opr8
+  //opr9
+  //opr10
 }
