@@ -12,4 +12,5 @@ public class Trida4 {
   //opr8
   //opr9
   //opr10
+  //opr11 main
 }
